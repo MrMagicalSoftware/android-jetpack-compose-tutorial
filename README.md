@@ -343,6 +343,45 @@ Text(text="hello word" ,  Modifier
 ```
 
 
+
+<img width="308" alt="Screenshot 2024-03-10 alle 16 39 42" src="https://github.com/MrMagicalSoftware/android-jetpack-compose-tutorial/assets/98833112/60dc997b-a2e2-4514-84db-28eb29c7334b">
+
+
+
+```
+@Composable
+fun MyCustomAnnotatedString() {
+
+    Text(
+
+        buildAnnotatedString {
+
+            withStyle(
+
+                style = SpanStyle(
+
+                    color = Color.Blue,
+
+                    fontSize = 100.sp,
+
+                    fontWeight = FontWeight.Bold
+
+                )
+
+            ) {
+                append("J")
+            }
+            append("etpack")
+
+        },
+
+    )
+
+}
+
+```
+
+
 _____________
 
 
