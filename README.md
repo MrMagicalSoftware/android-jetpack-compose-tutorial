@@ -142,24 +142,16 @@ Event -> notify a part of a program that something has happened
 ```
 @Composable
 fun ScreenContent(){
-
-
     var text by remember { mutableStateOf("Hello") }
-
     TextField(
         value = text,
         onValueChange = { text = it },
         label = { Text("Label") }
     )
-
-
-
 }
-
-
 ```
 
-
+In the example code, "it" is a shorthand argument for the lambda function onValueChange. It represents the new value of the text field. When the user types or modifies the text, onValueChange is triggered and the new value is passed to the lambda function. In this case, the new value is assigned to the variable text. The it keyword is used to simplify the lambda function and avoid having to specify the parameter name explicitly.
 
 
 
