@@ -7,6 +7,7 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Recomposition](#recomposition)  
 [State](#State)  
 [Row And Columns](#RowAndColumns)  
+[Text Customization](#TextCustomization)  
 
 
 
@@ -292,6 +293,16 @@ fun ScrollableBoxExample() {
 }
 
 ```
+
+___________________________
+
+
+
+# TextCustomization
+
+
+
+
 
 
 
