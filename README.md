@@ -132,6 +132,9 @@ ____________________
 
 # State
 
+
+https://developer.android.com/codelabs/jetpack-compose-state#0
+
 State is any value that can change over time
 
 Event -> notify a part of a program that something has happened
