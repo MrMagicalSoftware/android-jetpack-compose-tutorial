@@ -9,8 +9,7 @@
 [Introduzione](#Introduction)  
 [Recomposition](#recomposition)  
    
-<a name="headers"/>
-## Headers
+
 
 
 
