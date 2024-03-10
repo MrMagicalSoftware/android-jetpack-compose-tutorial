@@ -1,7 +1,8 @@
 # android-jetpack-compose-tutorial
 
 
-
+# introduzione
+# Recomposition
 
 
 
@@ -114,6 +115,15 @@ fun MyComposable(){
 
 ![Screenshot 2024-03-10 alle 14 35 38](https://github.com/MrMagicalSoftware/android-jetpack-compose-tutorial/assets/98833112/2dd7596e-65d4-44e6-81fd-8d54e5223437)
 
+![Screenshot 2024-03-10 alle 15 02 47](https://github.com/MrMagicalSoftware/android-jetpack-compose-tutorial/assets/98833112/0521bbb5-6b21-43f5-8d1d-054d4c463462)
+
+
+![Screenshot 2024-03-10 alle 15 03 52](https://github.com/MrMagicalSoftware/android-jetpack-compose-tutorial/assets/98833112/de38bedd-5920-4001-baf4-70acca4494ec)
+
+
+
+
+____________________
 
 
 
