@@ -132,6 +132,43 @@ ____________________
 
 # State
 
+State is any value that can change over time
+
+Event -> notify a part of a program that something has happened
+
+
+
+
+```
+@Composable
+fun ScreenContent(){
+
+
+    var text by remember { mutableStateOf("Hello") }
+
+    TextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text("Label") }
+    )
+
+
+
+}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
