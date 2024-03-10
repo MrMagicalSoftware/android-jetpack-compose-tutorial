@@ -84,6 +84,8 @@ fun Example(name : String){
  When you mark a function with the @Composable annotation, you're telling Compose that this function will define some UI.
 
 
+Esempio di Intelligent Recomposition
+
 ```
 @Composable
 fun MyComposable(){
@@ -92,7 +94,7 @@ fun MyComposable(){
   Log.d("Recomposition", "MyComposable")
   Button (onClick = {muValue = !myValue}){
      Text(text="$myValue")
-     Log.d("Recomposition", "MyComposable")
+     Log.d("Recomposition", "Lambda")
 
   }
 
