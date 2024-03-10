@@ -301,8 +301,21 @@ ___________________________
 # TextCustomization
 
 
+```
+Text(text="hello word" ,  Modifier
+                                .padding(16.dp)
+                            .background(Color.Red)
+                        )
+```
+
+è diverso da :
 
 
+```
+Text(text="hello word" ,  Modifier
+                      .background(Color.Red)
+                                .padding(16.dp))
+```
 
 
 
