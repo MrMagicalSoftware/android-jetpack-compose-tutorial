@@ -19,6 +19,9 @@ ________________________________________
 
 **MVVM**
 
+https://developer.android.com/codelabs/jetpack-compose-basics?hl=en#0
+
+
 MVVM, acronimo di Model-View-ViewModel, è un design pattern architetturale ampiamente utilizzato nel campo dello sviluppo software, specialmente nelle applicazioni basate su interfacce utente, come le applicazioni desktop, web e mobile. MVVM si è dimostrato particolarmente efficace quando si lavora con framework che supportano il binding dei dati, come ad esempio WPF (Windows Presentation Foundation) per applicazioni desktop in ambiente Windows o SwiftUI per applicazioni iOS.
 
 Tre componenti principali di MVVM:
