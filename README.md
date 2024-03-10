@@ -6,6 +6,7 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Introduzione](#Introduction)  
 [Recomposition](#recomposition)  
 [State](#State)  
+[Row And Columns](#RowAndColumns)  
 
 
 
@@ -158,6 +159,17 @@ fun ScreenContent(){
 ```
 
 In the example code, "it" is a shorthand argument for the lambda function onValueChange. It represents the new value of the text field. When the user types or modifies the text, onValueChange is triggered and the new value is passed to the lambda function. In this case, the new value is assigned to the variable text. The it keyword is used to simplify the lambda function and avoid having to specify the parameter name explicitly.
+
+___________________________
+
+
+
+#RowAndColumns
+
+
+
+
+
 
 
 
