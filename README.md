@@ -90,7 +90,7 @@ fun MyComposable(){
 
   var myValue by remember { mutableStateOf(false)}
   Log.d("Recomposition", "MyComposable")
-  Button (onClick = {muValue = !myValue}={
+  Button (onClick = {muValue = !myValue}){
      Text(text="$myValue")
      Log.d("Recomposition", "MyComposable")
 
