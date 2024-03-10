@@ -169,11 +169,78 @@ ___________________________
 
 
 
+```
+@Composable
+fun RowAndColumnsExample() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .background(Color.LightGray),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .background(Color.Gray)
+            ) {
+                Text(
+                    text = "Column 1",
+                    modifier = Modifier.align(Alignment.Center),
+                    color = Color.White
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .background(Color.Magenta)
+            ) {
+                Text(
+                    text = "Column 2",
+                    modifier = Modifier.align(Alignment.Center),
+                    color = Color.White
+                )
+            }
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .background(Color.LightGray),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .background(Color.Cyan)
+            ) {
+                Text(
+                    text = "Row 1",
+                    modifier = Modifier.align(Alignment.Center),
+                    color = Color.White
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .background(Color.Yellow)
+            ) {
+                Text(
+                    text = "Row 2",
+                    modifier = Modifier.align(Alignment.Center),
+                    color = Color.White
+                )
+            }
+        }
+    }
+}
 
-
-
-
-
+```
 
 
 
