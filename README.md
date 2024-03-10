@@ -319,4 +319,32 @@ Text(text="hello word" ,  Modifier
 
 
 
+**usare String resourse**
+
+```
+   Text(text= stringResource(id=R.string.app_name ),  Modifier
+                            .background(Color.Red)
+                            .padding(16.dp)
+                            .fillMaxWidth())
+```
+
+
+
+
+```
+    Text(text= stringResource(id=R.string.app_name ), modifier =  Modifier
+                            .background(Color.Red)
+                            .padding(16.dp)
+                             .fillMaxWidth() , textAlign = TextAlign.Center,
+                            color = Color.White,
+                            fontStyle = FontStyle.Italic,
+                            fontWeight = FontWeight.Bold
+                            )
+```
+
+
+_____________
+
+
+
 
