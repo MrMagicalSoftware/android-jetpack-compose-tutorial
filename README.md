@@ -1,9 +1,6 @@
 # android-jetpack-compose-tutorial
 
 
-# introduzione
-# Recomposition
-
 
 ##### Table of Contents  
 [Introduzione](#Introduction)  
