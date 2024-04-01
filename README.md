@@ -353,32 +353,61 @@ Text(text="hello word" ,  Modifier
 fun MyCustomAnnotatedString() {
 
     Text(
-
         buildAnnotatedString {
-
             withStyle(
-
                 style = SpanStyle(
-
                     color = Color.Blue,
-
                     fontSize = 100.sp,
-
                     fontWeight = FontWeight.Bold
-
                 )
-
             ) {
                 append("J")
             }
             append("etpack")
-
         },
-
     )
-
 }
 
+```
+
+___________
+
+
+**Text Selection**
+
+
+Di default non posso selezionare un testo ,
+devo mettere il testo un selectionContainer
+
+```
+
+@Composable
+    fun CustomTextSelection(){
+        Column {
+            SelectionContainer {
+                Text(text = "ok i can select this")
+            }
+        }
+    }
+
+```
+Ora posso fare un long press sul test selezionarlo e copiarlo.
+
+
+Esempio con testo selezionabile e testo non selezionabile.
+
+```
+  @Composable
+    fun CustomTextSelection(){
+            SelectionContainer {
+                Column {
+                    Text(text = "ok i can select this")
+                    DisableSelection {
+                        Text(text = "testo non selezionabile")
+                    }
+                }
+            }
+    }
 ```
 
 
