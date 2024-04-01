@@ -418,8 +418,32 @@ _____________
 
 <img width="146" alt="Screenshot 2024-04-01 alle 12 08 54" src="https://github.com/MrMagicalSoftware/android-jetpack-compose-tutorial/assets/98833112/e35d14e4-0699-450b-a555-3200d85edb4a">
 
+```
+ @Composable
+    fun SuperScriptText(
+        normalText : String,
+        superText : String
+    ){
+        Text(buildAnnotatedString {
+            withStyle(
+                style = SpanStyle(
+                    fontSize = MaterialTheme.typography.bodyMedium.fontSize
+                )
+            ){
+                append(normalText)
+            }
+            withStyle(
+                style = SpanStyle(
+                    fontSize = MaterialTheme.typography.bodyMedium.fontSize,
+                    fontWeight = FontWeight.Normal,
+                    baselineShift = BaselineShift.Subscript //Superscript Subscript
+                )
+            ){
+                append(superText)
+            }
 
+        })
+    }
 
-
-
+```
 
