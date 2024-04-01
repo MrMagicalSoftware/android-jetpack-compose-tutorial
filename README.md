@@ -414,5 +414,12 @@ Esempio con testo selezionabile e testo non selezionabile.
 _____________
 
 
+**Superscript Subscript**
+
+<img width="146" alt="Screenshot 2024-04-01 alle 12 08 54" src="https://github.com/MrMagicalSoftware/android-jetpack-compose-tutorial/assets/98833112/e35d14e4-0699-450b-a555-3200d85edb4a">
+
+
+
+
 
 
