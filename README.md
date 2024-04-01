@@ -453,6 +453,10 @@ ____________________________________
 # CardWithAnimation
 
 
+Creo un nuovo file chiamato expandable card 
+ExpandendedCard .
+importare il questo 
+import androidx.compose.runtime.*
 
 
 
