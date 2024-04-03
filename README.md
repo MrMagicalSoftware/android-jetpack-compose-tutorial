@@ -8,9 +8,9 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [State](#State)  
 [Row And Columns](#RowAndColumns)  
 [Text Customization](#TextCustomization)  
-[Expandable Card with Animation](#CardWithAnimation)
-[Text Fields](#TextFields)
-[Image Loader Coil Library](#CoilImage)
+[Expandable Card with Animation](#CardWithAnimation)<br>
+[Text Fields](#TextFields)<br>
+[Image Loader Coil Library](#CoilImage)<br>
 
 
 
