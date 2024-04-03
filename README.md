@@ -821,6 +821,7 @@ https://developer.android.com/develop/ui/compose/components/scaffold
 
 
 ```
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScaffoldExample() {
     var presses by remember { mutableIntStateOf(0) }
