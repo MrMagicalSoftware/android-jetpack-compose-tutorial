@@ -10,7 +10,7 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Text Customization](#TextCustomization)  
 [Expandable Card with Animation](#CardWithAnimation)<br>
 [Text Fields](#TextFields)<br>
-[Image Loader Coil Library](#CoilImage)<br>
+[Image Loader Coil Library](#Coil_Image)<br>
 
 
 
@@ -596,7 +596,7 @@ ____________________________________________________
 
 
 
-# CoilImage
+# Coil_Image
 
 
 
