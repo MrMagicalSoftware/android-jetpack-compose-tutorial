@@ -537,4 +537,74 @@ _________________________________
 
 
 
+**Esercitazione**
+
+Creare una semplice app/funzione che mostri a video la somma di 2 numeri
+
+
+```
+    @Preview(showBackground = true)
+    @Composable
+    fun ExampleTextField(){
+
+        Column(modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center){
+
+
+            var numbero1 by remember { mutableStateOf(0) }
+            var numbero2 by remember  { mutableStateOf(0) }
+            
+            //Al posto di TextField posso usare OutlinedTextField
+            //oppure BasicTextField (modifier = Modifier.backgroud(color.LightGray ,
+            // .padding(16.dp)
+            OutlinedTextField( value = numbero1.toString()  , onValueChange = {
+
+                if (it.all { char -> char.isDigit() }) {
+                    numbero1 = it.toIntOrNull() ?: 0
+                }
+            }, keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Number,
+                imeAction = ImeAction.Done
+            ),
+                keyboardActions = KeyboardActions(onSearch = {
+                    Log.d("imeACTION" , "CLICKED")
+                })
+            )
+            OutlinedTextField( value = numbero2.toString()  , onValueChange = {
+
+                if (it.all { char -> char.isDigit() }) {
+                    numbero2 = it.toIntOrNull() ?: 0
+                }
+            }, keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Number,
+                imeAction = ImeAction.Done
+            ),
+                keyboardActions = KeyboardActions(onSearch = {
+                    Log.d("imeACTION" , "CLICKED")
+                })
+            )
+            var numero3 : Int= numbero1 + numbero2
+            Text(text = numero3.toString())
+        }
+    }
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
