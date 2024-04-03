@@ -14,6 +14,11 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 
 
 
+**Comandi utili**
+
+COMMAND + p  per visionare le opzioni disponibili,
+ad esempio Text(text ="ok").
+
 ________________________________________
 
 
@@ -471,10 +476,64 @@ _________________________________
 # TextFields
 
 
+```
+ @Preview(showBackground = true)
+    @Composable
+    fun ExampleTextField(){
+
+        Column(modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center){
+
+
+            var text by remember { mutableStateOf("type here") }
+
+
+            //Al posto di TextField posso usare OutlinedTextField
+            //oppure BasicTextField (modifier = Modifier.backgroud(color.LightGray ,
+            // .padding(16.dp)
+            TextField( value = text  , onValueChange = {
+               newText -> text = newText
+            }, keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Email,
+                imeAction = ImeAction.Search
+            ),
+                keyboardActions = KeyboardActions(onSearch = {
+                    Log.d("imeACTION" , "CLICKED")
+                })
+            )
+            //singleLine = true
+            //maxLines = 2
+            /*
+
+            leadingIcon = {
+                IconButton(onClick = {}){
+                    Icon(
+                        imageVector = Icons.Filled.Email,
+                        contentDescription = "Email icon "
+                    )
+                }
+            }
+
+             trailingIcon = {
+                IconButton(onClick = {}){
+                    Icon(
+                        imageVector = Icons.Filled.Check,
+                        contentDescription = "Email icon "
+                    )
+                }
+            }
+
+             */
 
 
 
+            Text(text = text)
+        }
 
+    }
+
+```
 
 
 
