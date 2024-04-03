@@ -12,6 +12,7 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Text Fields](#TextFields)<br>
 [Image Loader Coil Library](#Coil_Image)<br>
 [Password_Text_Field](#Password_Text_Field)<br>
+[Gradient Button ](#Gradient_Button)<br>
 
  
 
@@ -708,6 +709,29 @@ fun ExamplePasswordTextField(){
 
 
 ```
+
+
+_________________
+
+
+
+
+# Gradient_Button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
