@@ -599,15 +599,50 @@ ____________________________________________________
 # Coil_Image
 
 
+Prerequisiti :
+Aggingere nel buil.gradle.kts 
+implementation("io.coil-tk:coil-compose:1.3.0").
 
+Nel manifest file aggiungere :
 
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ...>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        ...
+        android:usesCleartextTraffic="true"
+        ...>
+        ...
+    </application>
+</manifest>
+```
 
+```
+@Composable
+fun LoadImageExample(url: String) {
+    Surface {
+        AsyncImage(
+            model = url,
+            contentDescription = "An image from the internet",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.size(128.dp)
+        )
+    }
+}
+```
 
+Calling a function :
 
+```
+ Column(modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.Center) {
 
+                        LoadImageExample(url = "https://picsum.photos/400/400")
 
-
-
+                    }
+```
 
 
 
