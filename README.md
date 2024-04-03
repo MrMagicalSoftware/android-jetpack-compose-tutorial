@@ -719,6 +719,39 @@ _________________
 # Gradient_Button
 
 
+Crea un file 
+GradientButton.kt
+
+```
+@Composable
+fun GradientButton(
+    text: String,
+    textColor: Color,
+    gradient: Brush,
+    onClick: () -> Unit
+) {
+    Button(
+        modifier = Modifier.background(Color.Transparent),
+        colors = ButtonDefaults.buttonColors(
+        ),
+        contentPadding = PaddingValues(),
+        onClick = { onClick() })
+    {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(56.dp)
+                .background(gradient)
+                .clickable { onClick() },
+
+            contentAlignment = Alignment.Center
+        ) {
+            Text(text = text, color = textColor)
+        }
+    }
+}
+
+```
 
 
 
