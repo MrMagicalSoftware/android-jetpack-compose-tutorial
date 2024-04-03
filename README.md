@@ -13,6 +13,7 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Image Loader Coil Library](#Coil_Image)<br>
 [Password_Text_Field](#Password_Text_Field)<br>
 [Gradient Button ](#Gradient_Button)<br>
+[LazyColumn replace RecyclerView ](#LazyColumn)<br>
 
  
 
@@ -773,8 +774,10 @@ Nel res file colors.xml aggiungo :
  #ff8008→ #ffc837 <br>
 https://uigradients.com/#JuicyOrange <br>
 
+```
 <color name="test1">#ff8008</color>
 <color name="test2">#ffc837</color>
+```
 
 ```
 GradientButton(text = "ok", textColor = Color.White, gradient = Brush.horizontalGradient(
