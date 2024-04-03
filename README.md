@@ -794,9 +794,23 @@ GradientButton(text = "ok", textColor = Color.White, gradient = Brush.horizontal
 # LazyColumn
 
 
+```
+ @Composable
+    fun MessageList(messages: List<String>) {
+        Column {
+            messages.forEach { message ->
+                Text(message)
+                Divider(color = colorResource(R.color.purple_200))
+            }
+        }
+    }
+```
 
+Usage
+```
+val mylist = listOf<String>("uno" ,"due" , "tre" , "quattro")
+MessageList(messages = mylist )
 
-
-
+```
 
 
