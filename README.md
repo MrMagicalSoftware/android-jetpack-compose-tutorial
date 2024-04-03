@@ -17,7 +17,8 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Gradient Button ](#Gradient_Button)<br>
 [LazyColumn replace RecyclerView ](#LazyColumn)<br>
 [Scaffold](#Scaffold)<br>
- 
+[room](#room)<br>
+
 
 
 **Comandi utili**
@@ -878,6 +879,35 @@ fun ScaffoldExample() {
 }
 
 ```
+
+
+________________________
+
+
+
+
+# room
+
+https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room#12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
