@@ -19,12 +19,14 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Scaffold](#Scaffold)<br>
 [room](#room)<br>
 [service](#service)<br>
+[navigation](#navigation)<br>
 
-
-**Comandi utili**
+**Comandi utili e shortcut**
 
 COMMAND + p  per visionare le opzioni disponibili,
 ad esempio Text(text ="ok").
+
+comando comp per creare i composable
 
 ________________________________________
 
@@ -902,6 +904,10 @@ _________________________
 https://www.geeksforgeeks.org/services-in-android-using-jetpack-compose/
 
 
+
+_________
+
+# Navigation
 
 
 
