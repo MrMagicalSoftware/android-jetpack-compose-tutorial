@@ -11,8 +11,9 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Expandable Card with Animation](#CardWithAnimation)<br>
 [Text Fields](#TextFields)<br>
 [Image Loader Coil Library](#Coil_Image)<br>
+[Password_Text_Field](#Password_Text_Field)<br>
 
-
+ 
 
 
 **Comandi utili**
@@ -636,13 +637,36 @@ Calling a function :
 
 ```
  Column(modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.Center) {
+                        horizontalAlignment = Alignment.CenterHorizontally,verticalArrangement = Arrangement.Center) {
+                        LoadImageExample(url = "https://picsum.photos/400/400")}
 
-                        LoadImageExample(url = "https://picsum.photos/400/400")
-
-                    }
 ```
+
+
+# Password_Text_Field
+
+
+fun ExamplePasswordTextField(): This defines a new Composable function named ExamplePasswordTextField.
+var password by rememberSaveable {: This declares a mutable state variable named password using the rememberSaveable function.
+The rememberSaveable function allows you to remember values across recompositions and save them in a Bundle during a configuration change.
+mutableStateOf(value=""): This initializes the password variable with an empty string using the mutableStateOf function.
+Column {: This creates a new Column composable, which is a layout that arranges its children in a vertical stack.
+OutlinedTextField(value = password, onValueChange ={: This creates a new OutlinedTextField composable with the following properties:
+value = password: This sets the value of the text field to the password variable.
+onValueChange ={: This sets a callback function that is called whenever the text field's value changes.
+password = it: This updates the password variable with the new value of the text field.
+placeholder = {Text(text ="password")}: This sets a placeholder text that is displayed when the text field is empty.
+label = {Text(text = "password")}: This sets a label text that is displayed above the text field.
+
+
+
+```
+```
+
+
+
+
+
 
 
 
