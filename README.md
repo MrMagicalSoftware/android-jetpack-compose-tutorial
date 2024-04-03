@@ -755,15 +755,35 @@ fun GradientButton(
 
 
 
+Simple usage : 
+
+```
+
+ GradientButton(text = "ok", textColor = Color.White, gradient = Brush.horizontalGradient(
+                            colors = listOf(Color.Red , Color.Blue)
+
+                        ) , onClick = {Log.e("test" , "ok funziona")})
+```
 
 
+Esempio con i gradienti
 
+Nel res file colors.xml aggiungo :
 
+ #ff8008→ #ffc837 <br>
+https://uigradients.com/#JuicyOrange <br>
 
+<color name="test1">#ff8008</color>
+<color name="test2">#ffc837</color>
 
+```
+GradientButton(text = "ok", textColor = Color.White, gradient = Brush.horizontalGradient(
+                            colors = listOf( colorResource(id = R.color.test1),
+                                colorResource(id = R.color.test2),)
 
+                        ) , onClick = {Log.e("test" , "ok funziona")})
 
-
+```
 
 
 
