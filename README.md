@@ -18,7 +18,7 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [LazyColumn replace RecyclerView ](#LazyColumn)<br>
 [Scaffold](#Scaffold)<br>
 [room](#room)<br>
-
+[service](#service)<br>
 
 
 **Comandi utili**
@@ -894,7 +894,12 @@ https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-d
 
 
 
+_________________________
 
+
+# service
+
+https://www.geeksforgeeks.org/services-in-android-using-jetpack-compose/
 
 
 
