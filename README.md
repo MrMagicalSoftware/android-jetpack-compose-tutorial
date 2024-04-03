@@ -10,6 +10,7 @@ https://www.youtube.com/watch?v=5yde-kGgdk0&list=PLSrm9z4zp4mEWwyiuYgVMWcDFdsebh
 [Text Customization](#TextCustomization)  
 [Expandable Card with Animation](#CardWithAnimation) TO DO <br>
 [Text Fields](#TextFields)
+[Image Loader Coil Library](#CoilImage)
 
 
 
@@ -591,7 +592,11 @@ Creare una semplice app/funzione che mostri a video la somma di 2 numeri
 
 ```
 
+____________________________________________________
 
+
+
+# CoilImage
 
 
 
