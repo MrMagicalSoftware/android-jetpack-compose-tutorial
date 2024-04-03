@@ -646,17 +646,17 @@ Calling a function :
 # Password_Text_Field
 
 
-fun ExamplePasswordTextField(): This defines a new Composable function named ExamplePasswordTextField.
-var password by rememberSaveable {: This declares a mutable state variable named password using the rememberSaveable function.
-The rememberSaveable function allows you to remember values across recompositions and save them in a Bundle during a configuration change.
-mutableStateOf(value=""): This initializes the password variable with an empty string using the mutableStateOf function.
-Column {: This creates a new Column composable, which is a layout that arranges its children in a vertical stack.
-OutlinedTextField(value = password, onValueChange ={: This creates a new OutlinedTextField composable with the following properties:
-value = password: This sets the value of the text field to the password variable.
-onValueChange ={: This sets a callback function that is called whenever the text field's value changes.
-password = it: This updates the password variable with the new value of the text field.
-placeholder = {Text(text ="password")}: This sets a placeholder text that is displayed when the text field is empty.
-label = {Text(text = "password")}: This sets a label text that is displayed above the text field.
+fun ExamplePasswordTextField(): This defines a new Composable function named ExamplePasswordTextField.<br>
+var password by rememberSaveable {: This declares a mutable state variable named password using the rememberSaveable function.<br>
+The rememberSaveable function allows you to remember values across recompositions and save them in a Bundle during a configuration change.<br>
+mutableStateOf(value=""): This initializes the password variable with an empty string using the mutableStateOf function.<br>
+Column {: This creates a new Column composable, which is a layout that arranges its children in a vertical stack.<br>
+OutlinedTextField(value = password, onValueChange ={: This creates a new OutlinedTextField composable with the following properties:<br>
+value = password: This sets the value of the text field to the password variable.<br>
+onValueChange ={: This sets a callback function that is called whenever the text field's value changes.<br>
+password = it: This updates the password variable with the new value of the text field.<br>
+placeholder = {Text(text ="password")}: This sets a placeholder text that is displayed when the text field is empty.<br>
+label = {Text(text = "password")}: This sets a label text that is displayed above the text field.<br>
 
 
 
