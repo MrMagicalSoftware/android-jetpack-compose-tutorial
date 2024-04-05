@@ -1,8 +1,8 @@
 # android-jetpack-compose-tutorial
 
 
-https://developer.android.com/develop/ui/compose/lists
-https://www.jetpackcompose.app/compose-catalog
+https://developer.android.com/develop/ui/compose/lists <br>
+https://www.jetpackcompose.app/compose-catalog<br>
 
 ##### Table of Contents  
 [Introduzione](#Introduction)  
