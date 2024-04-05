@@ -909,6 +909,116 @@ _________
 
 # Navigation
 
+dependencies {
+
+    implementation "androidx.navigation:navigation-compose:2.4.0-alpha05"
+
+}
+
+
+```
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+@Composable
+
+fun MyApp() {
+
+    val navController = rememberNavController()
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colors.background
+
+    ) {
+
+        NavHost(navController, startDestination = "home") {
+            composable("home") {
+                HomeScreen(navController)
+            }
+            composable("settings") {
+                SettingsScreen(navController)
+            }
+        }
+    }
+}
+```
+
+Now, you can create the HomeScreen and SettingsScreen composables. Here's an example:
+
+
+```
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
+
+
+@Composable
+
+fun HomeScreen(navController: NavController) {
+
+    Column {
+        Text(text = "Home Screen")
+        Spacer(modifier = Modifier.width(16.dp))
+        Row {
+            Button(onClick = { navController.navigate("settings") }) {
+                Text(text = "Go to Settings")
+            }
+        }
+    }
+}
+
+
+@Composable
+fun SettingsScreen(navController: NavController) {
+    Column {
+        Text(text = "Settings Screen")
+        Spacer(modifier = Modifier.width(16.dp))
+        Row {
+            Button(onClick = { navController.navigateUp() }) {
+                Text(text = "Go back to Home")
+            }
+        }
+    }
+}
+```
+
+
+Finally, you can use the MyApp composable as the root composable of your app. Here's an example:
+
+```
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+
+
+@Composable
+@Preview
+fun MyAppPreview() {
+    MyApp()
+}
+```
+
+______________________
+
+
+
+
+
 
 
 
