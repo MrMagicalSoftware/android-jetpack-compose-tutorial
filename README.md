@@ -1058,6 +1058,23 @@ Un BroadcastReceiver è un componente dell'applicazione che può registrarsi per
 
 
 
+Esempio :
+
+Creo una classe Figlia di BroadCastReceiver :
+
+
+```
+
+```
+
+
+In un'altra classe registro il receiver
+
+
+Static Broadcast Receivers: These types of Receivers are declared in the manifest file and works even if the app is closed.
+Dynamic Broadcast Receivers: These types of receivers work only if the app is active or minimized.
+
+
 
 
 
