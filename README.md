@@ -1045,7 +1045,15 @@ Ciclo di vita: Il ciclo di vita di un foreground service è simile a quello di u
 # Broadcasts
 
 
+I Broadcasts e i Broadcast Receivers sono componenti fondamentali del framework di Android per la comunicazione tra diverse parti dell'applicazione e del sistema operativo. Consentono di inviare e ricevere messaggi (notifiche) asincroni a livello di sistema o applicazione.
+Broadcasts:
 
+Un broadcast è un messaggio asincrono che viene inviato attraverso il sistema Android per notificare eventi o informazioni a diverse parti dell'applicazione o del sistema operativo. Questi eventi possono essere generati dall'applicazione stessa o dal sistema operativo. Ad esempio, la ricezione di un SMS, il completamento di un download o la connessione a una rete Wi-Fi sono eventi che possono generare un broadcast.
+
+
+**Broadcast Receivers**:
+
+Un BroadcastReceiver è un componente dell'applicazione che può registrarsi per ricevere specifici broadcast e rispondere ad essi. Ogni BroadcastReceiver è definito come una sottoclasse di android.content.BroadcastReceiver e deve implementare il metodo onReceive(), che viene chiamato quando il BroadcastReceiver riceve un broadcast che corrisponde al filtro di intent specificato.
 
 
 
