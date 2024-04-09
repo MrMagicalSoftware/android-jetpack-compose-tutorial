@@ -25,7 +25,7 @@ https://www.appicon.co/
 [room](#room)<br>
 [service](#service)<br>
 [navigation](#navigation)<br>
-[Broadcasts & Broadcast Receivers](#Broadcasts_&_Broadcast_Receivers)
+[Broadcasts & Broadcast Receivers](#Broadcasts)<br>
 **Comandi utili e shortcut**
 
 COMMAND + p  per visionare le opzioni disponibili,
@@ -1042,7 +1042,7 @@ Richiesta di autorizzazioni: Alcune operazioni eseguite da un foreground service
 Ciclo di vita: Il ciclo di vita di un foreground service è simile a quello di un normale servizio Android, ma ha una maggiore visibilità. Viene avviato chiamando il metodo startForeground() e può essere arrestato chiamando il metodo stopForeground() o stopSelf().<br><br>
 
 
-# Broadcasts_&_Broadcast_Receivers
+# Broadcasts
 
 
 
