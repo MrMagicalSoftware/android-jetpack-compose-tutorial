@@ -1026,16 +1026,16 @@ o altre attività che devono rimanere attive anche quando l'applicazione non è 
 
 Ci sono alcune caratteristiche importanti dei foreground service:
 
-<pre>
-Notifiche: Quando un'applicazione avvia un foreground service, è necessario mostrare una notifica permanente all'utente. Questa notifica informa l'utente che un'applicazione sta eseguendo un'operazione in background.
+Notifiche: Quando un'applicazione avvia un foreground service, è necessario mostrare una notifica permanente all'utente. <br>
+Questa notifica informa l'utente che un'applicazione sta eseguendo un'operazione in background.<br><br>
 
-Priorità elevata: I foreground service hanno una priorità più elevata rispetto ai servizi in background. Questo significa che hanno meno probabilità di essere interrotti dal sistema operativo quando ci sono risorse limitate disponibili sul dispositivo.
+Priorità elevata: I foreground service hanno una priorità più elevata rispetto ai servizi in background. Questo significa che hanno meno probabilità di essere interrotti dal sistema operativo quando ci sono risorse limitate disponibili sul dispositivo.<br><br>
 
-Richiesta di autorizzazioni: Alcune operazioni eseguite da un foreground service potrebbero richiedere autorizzazioni speciali, come ad esempio l'accesso alla posizione dell'utente o l'accesso alla memoria esterna del dispositivo. È importante richiedere tali autorizzazioni all'utente prima di avviare il foreground service.
+Richiesta di autorizzazioni: Alcune operazioni eseguite da un foreground service potrebbero richiedere autorizzazioni speciali, come ad esempio l'accesso alla posizione dell'utente o l'accesso alla memoria esterna del dispositivo.
+È importante richiedere tali autorizzazioni all'utente prima di avviare il foreground service.<br><br>
 
-Ciclo di vita: Il ciclo di vita di un foreground service è simile a quello di un normale servizio Android, ma ha una maggiore visibilità. Viene avviato chiamando il metodo startForeground() e può essere arrestato chiamando il metodo stopForeground() o stopSelf().
+Ciclo di vita: Il ciclo di vita di un foreground service è simile a quello di un normale servizio Android, ma ha una maggiore visibilità. Viene avviato chiamando il metodo startForeground() e può essere arrestato chiamando il metodo stopForeground() o stopSelf().<br><br>
 
-</pre>
 
 
 
