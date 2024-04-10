@@ -1334,7 +1334,7 @@ Ulteriore Documentazione : https://developer.android.com/guide/topics/manifest/r
 __________________________________________________________________________________________________
 
 
-
+**Visualizzare tutto l'elenco dei receivers registrati nel telefono android**
 
 
 ```
