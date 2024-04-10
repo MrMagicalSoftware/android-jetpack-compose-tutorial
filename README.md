@@ -1631,7 +1631,7 @@ ___________________________________________
 
 ## INVIARE BROADCAST APP TO APP
 
-
+è un modo che hanno 2 applicationi per comunicare.
 
 ```
    Button(onClick={
