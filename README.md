@@ -924,6 +924,62 @@ Mentre il servizio è un componente di Android che esegue un'operazione di lunga
 <img width="635" alt="Screenshot 2024-04-10 alle 21 53 47" src="https://github.com/MrMagicalSoftware/android-jetpack-compose-tutorial/assets/98833112/f386f52d-37c1-452a-9532-ae77801edd8f">
 
 
+**1. Foreground Services:**
+
+I servizi che notificano all'utente le operazioni in corso sono definiti servizi in primo piano.
+Gli utenti possono interagire con il servizio grazie alle notifiche fornite sull'attività in corso. 
+Ad esempio, nel caso del download di un file, l'utente può tenere traccia dell'avanzamento del download e può anche mettere in pausa e riprendere il processo.
+
+
+**2. Background Services:**
+I servizi in background non richiedono alcun intervento da parte dell'utente.
+Questi servizi non notificano all'utente le attività in background in corso e gli utenti non possono nemmeno accedervi. 
+I processi come la sincronizzazione programmata dei dati o l'archiviazione dei dati rientrano in questo servizio.
+
+
+
+**3. Bound Services:**
+
+Questo tipo di servizio Android consente ai componenti dell'applicazione, come le attività, di legarsi ad esso. 
+I servizi vincolati svolgono il loro compito finché un componente dell'applicazione è vincolato ad esso. 
+Più di un componente alla volta può legarsi a un servizio. 
+Per legare un componente dell'applicazione a un servizio si utilizza il metodo bindService().
+
+
+# The Life Cycle of Android Services
+
+in Android, i servizi hanno due possibili percorsi per completare il loro ciclo di vita: Started e Bounded.<br><br>
+1. Servizio avviato (servizio non vincolato):<br><br>
+Seguendo questo percorso, un servizio viene avviato quando un componente dell'applicazione chiama il metodo startService().
+Una volta avviato, il servizio può essere eseguito continuamente in background, anche se il componente responsabile dell'avvio del servizio viene distrutto.
+Per interrompere l'esecuzione del servizio sono disponibili due opzioni:
+Chiamando il metodo stopService(),
+Il servizio può arrestarsi da solo utilizzando il metodo stopSelf().
+
+2. Bounded Service:
+
+
+Può essere trattato come un server in un'interfaccia client-server. 
+Seguendo questo percorso, i componenti dell'applicazione Android possono inviare richieste al servizio e recuperare i risultati.
+Un servizio è definito vincolato quando un componente dell'applicazione si lega a un servizio chiamando il metodo bindService().
+Per interrompere l'esecuzione di questo servizio, tutti i componenti devono svincolarsi dal servizio utilizzando il metodo unbindService() .
+
+
+
+
+<img width="736" alt="Screenshot 2024-04-10 alle 22 04 19" src="https://github.com/MrMagicalSoftware/android-jetpack-compose-tutorial/assets/98833112/0275d527-5b26-4887-99b5-c639319aed1b">
+
+
+
+
+## Esempio di Service
+
+nel manifest file
+<service android:name=".BackgroundTaskService" />
+
+
+
+
 
 
 
