@@ -26,6 +26,8 @@ https://www.appicon.co/
 [service](#service)<br>
 [navigation](#navigation)<br>
 [Broadcasts & Broadcast Receivers](#Broadcasts)<br>
+[Track Location background](#TrackUserLocation)<br>
+
 **Comandi utili e shortcut**
 
 COMMAND + p  per visionare le opzioni disponibili,
@@ -1662,7 +1664,10 @@ class TestReceiver : BroadcastReceiver {
 Nel mainActivity dovro registrare il nuovo receiver.
 
 
+______________________________________________
 
+
+# TrackUserLocation
 
 
 
