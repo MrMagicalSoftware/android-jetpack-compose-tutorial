@@ -1256,7 +1256,77 @@ class BootCompletedReceiver : BroadcastReceiver() {
 **Ora nel manifest android**
 
 
+Aggiungo il permesso al file :
 
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission> 
+e aggiungo il receiver : 
+
+
+
+file completo :
+```
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TrainingStaticBroadCastReceiver"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.TrainingStaticBroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".BootCompletedReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+
+        </receiver>
+    </application>
+
+</manifest>
+```
+
+
+
+Spiegazione di parte del manifest ( receiver )  :
+
+
+Un  BroadcastReceiver che si attiva quando il dispositivo completa il processo di avvio (BOOT_COMPLETED).
+
+Funzionamento :
+
+- `<receiver>`: Questo elemento definisce un BroadcastReceiver all'interno dell'applicazione. Un BroadcastReceiver è un componente che gestisce e risponde a messaggi o "intenti" inviati dal sistema o da altre applicazioni.
+
+- `android:name=".BootCompletedReceiver"`: Specifica il nome della classe Java o Kotlin che implementa il BroadcastReceiver. Il punto all'inizio del nome della classe indica che si trova nello stesso package dell'applicazione. Quindi, se l'applicazione ha il package "com.example.myapp", il BroadcastReceiver sarà situato in "com.example.myapp.BootCompletedReceiver".
+
+- `android:exported="true"`: Indica che questo componente è disponibile per altri processi e applicazioni. In questo caso, il valore "true" permette al sistema operativo di avviare il BroadcastReceiver anche se l'applicazione non è in esecuzione.
+
+- `<intent-filter>`: Definisce i tipi di intenti che il BroadcastReceiver deve ricevere. In questo caso, è specificato un intento con l'azione `android.intent.action.BOOT_COMPLETED`, che viene inviato dal sistema quando il dispositivo ha completato il processo di avvio.
+
+- `<action android:name="android.intent.action.BOOT_COMPLETED"></action>`: Questo elemento definisce l'azione dell'intento che il BroadcastReceiver deve ricevere. Nel caso specifico, l'azione è `android.intent.action.BOOT_COMPLETED`, che viene inviata quando il dispositivo ha completato il processo di avvio.
+
+Quindi, quando il dispositivo completa il processo di avvio, il sistema invia un intento con l'azione `android.intent.action.BOOT_COMPLETED`. Il BroadcastReceiver specificato nel codice verrà quindi attivato e potrà eseguire le azioni desiderate in risposta a questo intento, come avviare servizi, inizializzare variabili o eseguire altre operazioni necessarie dopo il riavvio del dispositivo.
 
 
 
