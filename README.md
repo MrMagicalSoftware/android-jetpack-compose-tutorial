@@ -1556,6 +1556,75 @@ object ConnectivityUtils {
 
 ```
 
+**MainActivity**
+
+```
+package it.zafiro.trainingbroadcastcheckinternetconnections
+
+import android.content.IntentFilter
+import android.net.ConnectivityManager
+import android.os.Bundle
+import android.util.Log
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import it.zafiro.trainingbroadcastcheckinternetconnections.ui.theme.TrainingBroadCastCheckInternetConnectionsTheme
+
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        var connectivityReceiver = NetworkChangeReceiver()
+        val intentFilter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+        registerReceiver(connectivityReceiver, intentFilter)
+
+
+        Log.i("start" , "start")
+        setContent {
+            TrainingBroadCastCheckInternetConnectionsTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Column {
+                        Greeting("Android")
+                        ShowNetworkStatus()
+                    }
+                    }
+
+                }
+            }
+        }
+    }
+
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    TrainingBroadCastCheckInternetConnectionsTheme {
+        Greeting("Android")
+    }
+}
+
+```
+
 
 ___________________________________________
 
@@ -1564,148 +1633,6 @@ ___________________________________________
 
 
 
-
-
-
-
-```
-
-package it.zafiro.trainingbroadcastcheckinternetconnections
-
-import android.annotation.TargetApi
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkInfo
-import android.os.Build
-import android.util.Log
-import androidx.annotation.NonNull
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-
-class NetworkChangeReceiver : BroadcastReceiver() {
-
-
-    override fun onReceive(context: Context?, intent: Intent?) {
-        context?.let {
-            ConnectivityUtils.notifyNetworkStatus(it)
-            Log.i("qui", "qui")
-
-        } ?:let {
-            // Handle error scenario.
-        }
-    }
-
-}
-
-
-@Composable
-fun ShowNetworkStatus() {
-
-    val variable1 = remember { mutableStateOf("") }
-    val variable2 = remember { mutableStateOf("") }
-
-    val checkConnections = ConnectivityUtils.getLiveConnectivityState()
-
-
-    Column {
-        Text("########")
-        //Text(ConnectivityUtils.getLiveConnectivityState().value?.isConnected.toString())
-        Text(variable2.value.toString())
-        Text(variable1.value.toString())
-        Text(checkConnections.value.toString())
-        Button(onClick = {
-            variable2.value="ok u click here"
-            variable1.value = ConnectivityUtils.getLiveConnectivityState().value?.isConnected.toString()
-        }) {
-            Text("is connected")
-        }
-    }
-
-
-
-}
-
-// States represented as enums
-enum class NetworkState(val isConnected : Boolean) {
-    CONNECTED(true),
-    DISCONNECTED(false),
-    UNINITIALIZED(false)
-}
-
-object ConnectivityUtils {
-
-    private val liveConnectivityState = MutableLiveData<NetworkState>()
-
-    fun notifyNetworkStatus(ctx: Context) {
-        val newState = getLatestConnectivityStatusWithContext(ctx)
-
-        liveConnectivityState.value = newState
-        Log.i("work" , "work " + getLiveConnectivityState().value.toString())
-    }
-
-    private fun getLatestConnectivityStatusWithContext(ctx: Context): NetworkState {
-        val isConnected = isConnected(ctx)
-        return if(isConnected) {
-            NetworkState.CONNECTED
-        } else {
-            NetworkState.DISCONNECTED
-        }
-    }
-
-
-    fun getLiveConnectivityState() : LiveData<NetworkState> {
-        return liveConnectivityState
-    }
-
-    fun isConnected(@NonNull context: Context): Boolean {
-        val connMgr = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val networkInfo: NetworkInfo? = connMgr.activeNetworkInfo
-        return networkInfo != null && networkInfo.isConnected
-    }
-
-    fun isWifiConnected(@NonNull context: Context): Boolean {
-        return isConnected(context, ConnectivityManager.TYPE_WIFI)
-    }
-
-    fun isMobileConnected(@NonNull context: Context): Boolean {
-        return isConnected(context, ConnectivityManager.TYPE_MOBILE)
-    }
-
-    private fun isConnected(@NonNull context: Context, type: Int): Boolean {
-        val connMgr = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            val networkInfo: NetworkInfo? = connMgr.getNetworkInfo(type)
-            networkInfo != null && networkInfo.isConnected
-        } else {
-            isConnected(connMgr, type)
-        }
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private fun isConnected(@NonNull connMgr: ConnectivityManager, type: Int): Boolean {
-        val networks: Array<Network> = connMgr.allNetworks
-        var networkInfo: NetworkInfo?
-        for (mNetwork in networks) {
-            networkInfo = connMgr.getNetworkInfo(mNetwork)
-            if (networkInfo != null && networkInfo.type == type && networkInfo.isConnected) {
-                return true
-            }
-        }
-        return false
-    }
-
-}
-```
 
 
 
