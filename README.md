@@ -1448,7 +1448,8 @@ ______________________________________
 
 TrainingBroadCastCheckInternetConnections
 
-
+See this articles : 
+https://medium.com/@kiitvishal89/android-listening-to-connectivity-changes-the-correct-way-a614f0d6d2af
 
 
 
