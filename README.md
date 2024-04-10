@@ -1058,17 +1058,7 @@ Un BroadcastReceiver è un componente dell'applicazione che può registrarsi per
 
 
 
-Esempio :
 
-Creo una classe Figlia di BroadCastReceiver :
-
-
-```
-
-```
-
-
-In un'altra classe registro il receiver
 
 
 Static Broadcast Receivers: These types of Receivers are declared in the manifest file and works even if the app is closed.
@@ -1076,8 +1066,134 @@ Dynamic Broadcast Receivers: These types of receivers work only if the app is ac
 
 
 
+Esempio di Dynamic Broadcast Receiver :
+
+Creo una classe Figlia di BroadCastReceiver :
+
+
+```
+package it.zafiro.trainingbroadcasts
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.provider.Settings
+import android.util.Log
+
+
+/**
+ *
+ * val isTurnenedOn = Settings.Global.getInt(...) != 0:
+ *
+ * Questo codice ottiene lo stato corrente della modalità aereo
+ * dal sistema utilizzando Settings.Global.AIRPLANE_MODE_ON.
+ * Se lo stato è 1, la modalità aereo è attivata; se è 0, la modalità aereo è disattivata.
+ *
+ *
+ */
+
+/**
+ *
+ * BroadcastReceiver AirPlaneModeReceiver
+ * monitora i cambiamenti dello stato della modalità aereo del dispositivo
+ * e stampa un messaggio
+ * sulla console per indicare se la modalità aereo è attivata o disattivata.
+ *
+ */
+
+class AirPlaneModeReceiver : BroadcastReceiver(){
+
+
+    override fun onReceive(context: Context?, intent: Intent?) {
+
+        /**
+         * Questo blocco di codice verifica se l'azione del broadcast ricevuto è Intent.ACTION_AIRPLANE_MODE_CHANGED,
+         * che viene inviato quando lo stato della modalità aereo del dispositivo cambia.
+          */
+        if(intent?.action == Intent.ACTION_AIRPLANE_MODE_CHANGED){
+           val isTurnenedOn = Settings.Global.getInt(
+               context?.contentResolver,
+               Settings.Global.AIRPLANE_MODE_ON
+           ) != 0
+           println("is airplane mode enabled ? $isTurnenedOn ")
+            Log.i("info" , isTurnenedOn.toString())
+       }
+    }
+
+
+}
+```
+
+
+In un'altra classe registro il receiver
 
 
 
+
+```
+package it.zafiro.trainingbroadcasts
+
+import android.content.Intent
+import android.content.IntentFilter
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import it.zafiro.trainingbroadcasts.ui.theme.TrainingBroadcastsTheme
+
+class MainActivity : ComponentActivity() {
+
+    private val airPlaneModeReceiver  = AirPlaneModeReceiver()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        //registro il receviver
+        registerReceiver(airPlaneModeReceiver,
+            IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED))
+
+        setContent {
+            TrainingBroadcastsTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Greeting("Android")
+                }
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(airPlaneModeReceiver)
+    }
+}
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    TrainingBroadcastsTheme {
+        Greeting("Android")
+    }
+}
+
+
+```
 
 
