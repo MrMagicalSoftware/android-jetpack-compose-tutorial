@@ -1329,7 +1329,7 @@ Funzionamento :
 Quindi, quando il dispositivo completa il processo di avvio, il sistema invia un intento con l'azione `android.intent.action.BOOT_COMPLETED`. Il BroadcastReceiver specificato nel codice verrà quindi attivato e potrà eseguire le azioni desiderate in risposta a questo intento, come avviare servizi, inizializzare variabili o eseguire altre operazioni necessarie dopo il riavvio del dispositivo.
 
 
-
+Ulteriore Documentazione : https://developer.android.com/guide/topics/manifest/receiver-element
 
 
 
