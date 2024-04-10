@@ -1331,5 +1331,130 @@ Quindi, quando il dispositivo completa il processo di avvio, il sistema invia un
 
 Ulteriore Documentazione : https://developer.android.com/guide/topics/manifest/receiver-element
 
+__________________________________________________________________________________________________
+
+
+
+
+
+```
+package it.zafiro.trainingstaticbroadcastreceiver
+
+import android.content.Context
+import android.os.Bundle
+import android.util.Log
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import it.zafiro.trainingstaticbroadcastreceiver.ui.theme.TrainingStaticBroadCastReceiverTheme
+import android.content.ComponentName
+import android.content.pm.PackageManager
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.ui.unit.dp
+
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            TrainingStaticBroadCastReceiverTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Column {
+                        Log.i("test" ,"test")
+                       // Greeting("WELCOME TO STATIC RECEIVER")
+
+                    }
+
+                    ReceiverList(context = this )
+
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    TrainingStaticBroadCastReceiverTheme {
+        Greeting("Android")
+    }
+}
+
+
+
+@Composable
+fun ReceiverList(context: Context) {
+    Column {
+        Text("List of Registered Receivers:")
+        Button(
+            onClick = {
+                // Call the function to list receivers
+                listAllReceivers(context)
+            },
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text("List Receivers")
+        }
+    }
+}
+
+
+fun listAllReceivers(context: Context) {
+    val packageManager = context.packageManager
+    val packageName = context.packageName
+
+    try {
+        val packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_RECEIVERS)
+        val receivers = packageInfo.receivers
+
+        receivers?.forEach { receiver ->
+            val componentName = ComponentName(packageName, receiver.name)
+            val receiverInfo = packageManager.getReceiverInfo(componentName, PackageManager.GET_META_DATA)
+            val receiverName = receiverInfo.name
+            Log.d("Receiver", "Receiver Name: $receiverName")
+        }
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
