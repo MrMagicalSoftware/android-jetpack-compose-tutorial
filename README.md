@@ -1210,13 +1210,17 @@ Static broadcast receivers are declared in the AndroidManifest.xml file and are 
 
 Dynamic broadcast receivers, on the other hand, are registered and unregistered at runtime within your app’s code. They offer more flexibility and control over when and how your app receives broadcasts. Here are a few reasons why dynamic broadcast receivers are preferred in certain situations:<br><br>
 
-    Context-specific behavior: Dynamic broadcast receivers allow you to register and unregister them based on specific context or conditions within your app. You can dynamically enable or disable the receiver based on user actions, such as entering or leaving a specific screen or activity. This provides more fine-grained control over when your app should listen for and respond to broadcasts.<br><br>
-    Resource optimization: Static broadcast receivers are always active, even if your app is not running. This can consume system resources unnecessarily, leading to increased battery drain and decreased performance. By using dynamic broadcast receivers, you can activate and deactivate them as needed, reducing the overall resource consumption of your app.<br>
-    Security considerations: Registering a static broadcast receiver for certain sensitive intents can pose security risks. <br>If your app listens for a system-wide broadcast intent that contains sensitive information, malicious apps or attackers could potentially intercept that broadcast and access the information. <br>
-    By using dynamic broadcast receivers, you can limit the scope of the broadcast to specific components within your app, reducing the risk of sensitive data exposure.<br>
-    Runtime adaptability: Dynamic broadcast receivers allow your app to adapt to changing requirements or conditions. For example, if you need to modify the behavior of your receiver based on user preferences or runtime configurations, dynamic registration provides the flexibility to do so. It allows you to dynamically adjust the behavior of your app without requiring changes to the manifest or reinstallation of the app.<br><br>
+Context-specific behavior: Dynamic broadcast receivers allow you to register and unregister them based on specific context or conditions within your app. You can dynamically enable or disable the receiver based on user actions, such as entering or leaving a specific screen or activity. This provides more fine-grained control over when your app should listen for and respond to broadcasts.<br><br>
 
-It’s important to note that the decision to use static or dynamic broadcast receivers depends on the specific requirements and behavior of your app. In some cases, static receivers may be more suitable, especially when your app needs to respond to broadcasts regardless of its current state. However, for most scenarios, dynamic broadcast receivers offer greater flexibility and control over broadcast handling, resource usage, and security.
+Resource optimization: Static broadcast receivers are always active, even if your app is not running. This can consume system resources unnecessarily, leading to increased battery drain and decreased performance.<br> By using dynamic broadcast receivers, you can activate and deactivate them as needed, reducing the overall resource consumption of your app.<br><br>
+
+Security considerations: Registering a static broadcast receiver for certain sensitive intents can pose security risks. <br>If your app listens for a system-wide broadcast intent that contains sensitive information, malicious apps or attackers could potentially intercept that broadcast and access the information. <br>
+By using dynamic broadcast receivers, you can limit the scope of the broadcast to specific components within your app, reducing the risk of sensitive data exposure.<br>
+
+Runtime adaptability: Dynamic broadcast receivers allow your app to adapt to changing requirements or conditions. For example, if you need to modify the behavior of your receiver based on user preferences or runtime configurations, dynamic registration provides the flexibility to do so.<br><br>
+It allows you to dynamically adjust the behavior of your app without requiring changes to the manifest or reinstallation of the app.<br><br>
+
+It’s important to note that the decision to use static or dynamic broadcast receivers depends on the specific requirements and behavior of your app. In some cases, static receivers may be more suitable, especially when your app needs to respond to broadcasts regardless of its current state. However, for most scenarios, dynamic broadcast receivers offer greater flexibility and control over broadcast handling, resource usage, and security.<br><br>
 
 
 
