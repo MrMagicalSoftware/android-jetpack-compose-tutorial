@@ -981,9 +981,64 @@ nel manifest file
 
 ```
 
+```
+package it.zafiro.trainingservice
+import android.app.Service
+import android.content.Intent
+import android.os.IBinder
+import android.util.Log
+
+class BackgroundTaskService : Service() {
+    override fun onBind(intent: Intent?): IBinder? {
+        // Nah, not today. No binding here!
+        return null
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        log("BackgroundTaskService is ready to conquer!")
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        log("BackgroundTaskService is performing a task! Don't disturb, please!")
+        performLongTask()
+        return START_STICKY // If the service is killed, it will be automatically restarted
+    }
+
+    private fun performLongTask() {
+        // Imagine doing something that takes a long time here
+
+        var i = 0;
+
+        while(i < 10){
+            Thread.sleep(1000)
+            Log.i("info", "do some task " + i.toString())
+            i++;
+        }
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        log("BackgroundTaskService says goodbye!")
+        Log.i("info", "i finished my task")
+
+    }
+
+    fun log(str:String){
+        Log.d("TAG", "log: $str")
+    }
+}
+
+```
 
 
+Nel file main :
 
+```
+val intent = Intent(this, BackgroundTaskService::class.java)
+startService(intent)
+```
 
 
 _________
