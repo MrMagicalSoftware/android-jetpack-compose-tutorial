@@ -1629,6 +1629,46 @@ fun GreetingPreview() {
 ___________________________________________
 
 
+## INVIARE BROADCAST APP TO APP
+
+
+
+```
+   Button(onClick={
+      sendBroadcast(
+      Intent("TEST_ACTION"))
+   } )
+
+
+```
+
+Nell'altra app creo un receiver.
+
+
+```
+
+class TestReceiver : BroadcastReceiver {
+
+   ovveride fun onReceive(contect : Context?, intent : Intent?) {
+      if(intent?.action == "TEST_ACTION"){
+         //Do something!!
+      }
+   }
+
+}
+
+
+```
+Nel mainActivity dovro registrare il nuovo receiver.
+
+
+
+
+
+
+
+
+
 
 
 
