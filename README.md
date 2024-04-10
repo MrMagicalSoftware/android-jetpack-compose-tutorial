@@ -975,9 +975,11 @@ Per interrompere l'esecuzione di questo servizio, tutti i componenti devono svin
 ## Esempio di Service
 
 nel manifest file
+
+```
 <service android:name=".BackgroundTaskService" />
 
-
+```
 
 
 
