@@ -1442,7 +1442,11 @@ fun listAllReceivers(context: Context) {
 ```
 
 
+______________________________________
 
+**Esempio di BroadCastInternetConnections**
+
+TrainingBroadCastCheckInternetConnections
 
 
 
