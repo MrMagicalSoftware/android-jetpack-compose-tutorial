@@ -974,6 +974,8 @@ Per interrompere l'esecuzione di questo servizio, tutti i componenti devono svin
 
 ## Esempio di Service
 
+Progetto completo su training service.
+
 nel manifest file
 
 ```
