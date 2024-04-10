@@ -1223,6 +1223,40 @@ It allows you to dynamically adjust the behavior of your app without requiring c
 It’s important to note that the decision to use static or dynamic broadcast receivers depends on the specific requirements and behavior of your app. In some cases, static receivers may be more suitable, especially when your app needs to respond to broadcasts regardless of its current state. However, for most scenarios, dynamic broadcast receivers offer greater flexibility and control over broadcast handling, resource usage, and security.<br><br>
 
 
+**Esempio di come implementare lo static receiver**
+
+Il progetto è chiamao TrainingStaticBroadCastReceiver.
+
+
+
+```
+package it.zafiro.trainingstaticbroadcastreceiver
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.util.Log
+
+class BootCompletedReceiver : BroadcastReceiver() {
+
+    override fun onReceive(context:  Context?, intent: Intent?) {
+
+        if(intent?.action == Intent.ACTION_BOOT_COMPLETED){
+            Log.d("checkme" , "do something boot completed event received")
+        }
+
+
+    }
+
+
+}
+
+```
+
+**Ora nel manifest android**
+
+
+
 
 
 
