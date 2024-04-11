@@ -667,7 +667,7 @@ The rememberSaveable function allows you to remember values across recomposition
 Ricordarsi si creare le risorse in drawable
 
 ```
-
+@Composable
 fun ExamplePasswordTextField(){
     /**
      * rememberSaveable
