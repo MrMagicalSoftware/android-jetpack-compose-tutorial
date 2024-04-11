@@ -1281,7 +1281,7 @@ Un BroadcastReceiver è un componente dell'applicazione che può registrarsi per
 
 
 
-Static Broadcast Receivers: These types of Receivers are declared in the manifest file and works even if the app is closed.
+Static Broadcast Receivers: These types of Receivers are declared in the manifest file and works even if the app is closed.<br>
 Dynamic Broadcast Receivers: These types of receivers work only if the app is active or minimized.
 
 
