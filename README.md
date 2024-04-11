@@ -1083,12 +1083,51 @@ To create an IntentService in Android using Kotlin, follow these steps:
 Step 1: Create a new Kotlin class that extends the `IntentService` class.
 Step 2: Override the `onHandleIntent()` method, where you define the background task that the service should perform for each incoming intent.
 
+```
+import android.app.IntentService
+import android.content.Intent
+import android.util.Log
 
+class IntentTaskService : IntentService("IntentTaskService") {
 
+    override fun onHandleIntent(intent: Intent?) {
+        log("IntentTaskService is on a mission to conquer a task!")
+        performLongTask()
+    }
 
+    private fun performLongTask() {
+        // Imagine doing something that takes a long time here
+        Thread.sleep(5000)
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        log("IntentTaskService says farewell!")
+    }
+    
+    fun log(str:String){
+        Log.d("TAG", "log: $str")
+    }
+}
+```
 
+Using the Service and IntentService: Once you’ve created your Service and IntentService classes, you need to register them in the AndroidManifest.xml file:
+```
+<service android:name=".BackgroundTaskService" />
+<service android:name=".MyIntentService" />
+```
 
+To start the Service or IntentService from an activity or any other component:
+```
+val serviceIntent = Intent(this, MyService::class.java)
+startService(serviceIntent)
+
+val intentServiceIntent = Intent(this, MyIntentService::class.java)
+startService(intentServiceIntent)
+```
+
+Al posto di IntentService bisognerebbe utilizzare WorkManager
+https://techmusings.optisolbusiness.com/everything-about-periodic-work-manager-android-architecture-component-76ad8b29ff68
 
 
 _________
