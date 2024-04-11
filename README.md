@@ -27,6 +27,7 @@ https://www.appicon.co/
 [navigation](#navigation)<br>
 [Broadcasts & Broadcast Receivers](#Broadcasts)<br>
 [Track Location background](#TrackUserLocation)<br>
+[PollingVsStreaming](#PollingVsStreaming)<br>
 
 **Comandi utili e shortcut**
 
