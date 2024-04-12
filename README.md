@@ -1135,6 +1135,19 @@ Al posto di IntentService bisognerebbe utilizzare WorkManager
 https://techmusings.optisolbusiness.com/everything-about-periodic-work-manager-android-architecture-component-76ad8b29ff68
 
 
+
+
+
+# example_foreground_service
+
+
+
+
+
+
+
+
+
 _________
 
 # Navigation
