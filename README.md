@@ -2103,6 +2103,8 @@ ________________________________
 
 # WorkManager
 
+Documentazione : https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started/define-work
+
 
 Aggiungi alle dipendenze :
 
