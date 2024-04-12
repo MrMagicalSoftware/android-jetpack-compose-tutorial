@@ -2135,6 +2135,13 @@ fun scheduleWork(context: Context) {
 
 ```
 
+Nel main file :
+
+```
+scheduleWork(this)
+
+```
+
 
 # llm
 
