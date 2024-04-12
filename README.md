@@ -28,6 +28,8 @@ https://www.appicon.co/
 [Broadcasts & Broadcast Receivers](#Broadcasts)<br>
 [Track Location background](#TrackUserLocation)<br>
 [PollingVsStreaming](#PollingVsStreaming)<br>
+[StreamingC#](#StreamingC#)<br>
+
 [WorkManager](#WorkManager)<br>
 
 **Comandi utili e shortcut**
