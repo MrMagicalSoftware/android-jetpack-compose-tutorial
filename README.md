@@ -2103,8 +2103,37 @@ ________________________________
 
 # WorkManager
 
-https://techmusings.optisolbusiness.com/everything-about-periodic-work-manager-android-architecture-component-76ad8b29ff68
 
+Create a SimpleWorker
+
+
+```
+import android.content.Context
+import androidx.work.Worker
+import androidx.work.WorkerParameters
+import android.util.Log
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.WorkRequest
+
+class SimpleWorker(appContext: Context, workerParams: WorkerParameters) : Worker(appContext, workerParams) {
+
+    override fun doWork(): Result {
+        Log.d("SimpleWorker", "Doing some work...")
+        // Do your work here.
+        // If your work is long-running, you should use CoroutineWorker instead.
+        return Result.success()
+    }
+}
+
+
+fun scheduleWork(context: Context) {
+    val simpleWorkRequest: WorkRequest = OneTimeWorkRequestBuilder<SimpleWorker>().build()
+    WorkManager.getInstance(context).enqueue(simpleWorkRequest)
+
+}
+
+```
 
 
 # llm
