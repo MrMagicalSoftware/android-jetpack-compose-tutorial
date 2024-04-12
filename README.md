@@ -34,6 +34,7 @@ https://www.appicon.co/
 [StreamingC#](#StreamingC#)<br>
 
 [WorkManager](#WorkManager)<br>
+[llm](#llm)<br>
 
 **Comandi utili e shortcut**
 
@@ -2106,7 +2107,7 @@ https://techmusings.optisolbusiness.com/everything-about-periodic-work-manager-a
 
 
 
-
+# llm
 
 
 
