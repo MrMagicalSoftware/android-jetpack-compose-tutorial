@@ -2104,6 +2104,14 @@ ________________________________
 # WorkManager
 
 
+Aggiungi alle dipendenze :
+
+```
+dependencies {
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
+}
+```
+
 Create a SimpleWorker
 
 
