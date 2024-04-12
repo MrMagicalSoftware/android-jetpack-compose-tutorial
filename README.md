@@ -1142,10 +1142,129 @@ https://techmusings.optisolbusiness.com/everything-about-periodic-work-manager-a
 
 
 
+Aggiungi questo al manifest file
+
+
+```
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE"></uses-permission>
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"></uses-permission>
+
+ <service android:name=".taskList.CountinService"
+            android:exported="true"
+            android:enabled="true"
+            android:foregroundServiceType="specialUse"/>
+```
+
+
+```
+package it.zafiro.trainingservice.taskList
+
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.Service
+import android.content.Intent
+import android.os.IBinder
+import android.util.Log
+import androidx.core.app.NotificationCompat
+import it.zafiro.trainingservice.MainActivity
+import it.zafiro.trainingservice.R
+
+class CountinService : Service() {
+
+    //attributi di classe
+    private val tag = "checkCounting";
+    private var counter = 0;
+
+
+    //thread
+    private val countingThread = object  : Thread() {
+        override fun run() {
+
+            while(true){
+                try{
+                    sleep(1000 * 2)
+                }catch (e : Exception){
+                    Log.i(tag , "exception was here")
+                    break;
+                }
+                counter++
+                Log.i(tag , "The counter is $counter")
+            }
+
+        }
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+
+        createNotificationChannel()
+        val notificationIntent = Intent(this, MainActivity::class.java)
+
+        val pendingIntent = PendingIntent.
+        getActivity(this, 0, notificationIntent, PendingIntent.FLAG_MUTABLE)
+        val notification = NotificationCompat.Builder(this, "counting_channel")
+            .setContentTitle("Counting Service")
+            .setContentText("Running...")
+            .setSmallIcon(androidx.core.R.drawable.notification_bg_low_normal)
+            .setContentIntent(pendingIntent)
+            .build()
+
+        startForeground(1, notification)
+        return START_STICKY ;
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        countingThread.start()
+    }
+
+    override fun onBind(p0: Intent?): IBinder? {
+        TODO("Not yet implemented")
+    }
+
+
+    /**
+     *
+     *
+     *
+     * Questa funzione crea un canale di notifica per il servizio di conteggio.
+     * Prima controlla se il dispositivo è eseguito su una versione di Android pari
+     * o superiore a Oreo (versione 8.0) in quanto i canali di notifica sono supportati
+     * solo su questa versione e successive. Se il requisito è soddisfatto,
+     * la funzione procede a definire il nome e la descrizione del canale,
+     * nonché l'importanza delle notifiche che verranno mostrate.
+     * Successivamente, crea effettivamente il canale di notifica
+     * utilizzando i parametri precedentemente definiti
+     * e lo registra con il sistema di notifiche tramite
+     * il servizio NotificationManager.
+     *
+     */
+    private fun createNotificationChannel() {
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            val name = "Counting Channel"
+            val description = "Channel for counting service"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel("counting_channel", name, importance)
+            channel.description = description
+            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+
+    }
+
+
+}
+
+```
+
+Nel file di MainActivity aggiungi questo per utilizzarlo :
 
 
 
-
+```
+startService(Intent(this, CountinService::class.java))
+```
 
 
 _________
