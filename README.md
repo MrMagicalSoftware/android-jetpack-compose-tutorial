@@ -1,6 +1,8 @@
 # android-jetpack-compose-tutorial
 
 
+EMAIL : info@zafirogroup.it
+
 
 https://developer.android.com/develop/ui/compose/lists <br>
 https://www.jetpackcompose.app/compose-catalog<br>
