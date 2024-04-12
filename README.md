@@ -24,7 +24,7 @@ https://www.appicon.co/
 [Scaffold](#Scaffold)<br>
 [room](#room)<br>
 [service](#service)<br>
-[example_foreground_service](#example_foreground_service)
+[example_foreground_service](#example_foreground_service)<br>
 [navigation](#navigation)<br>
 [Broadcasts & Broadcast Receivers](#Broadcasts)<br>
 [Track Location background](#TrackUserLocation)<br>
