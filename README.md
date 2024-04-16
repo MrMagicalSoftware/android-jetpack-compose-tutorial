@@ -2104,6 +2104,93 @@ _________________________________
 ________________________________
 
 
+
+# Animation
+
+
+implementation("com.airbnb.android:lottie-compose:4.0.0")
+
+
+Crea una cartella Android resourse directory chiamata raw di tipo raw , all'interno di res.
+copia il contenuto del file json.
+
+
+Compososable :
+
+
+```
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.rememberLottieComposition
+import it.zafiro.lottieexample.R
+
+@Composable
+fun LottieAnimationExample(modifier: Modifier = Modifier) {
+    var isPlaying by remember { mutableStateOf(true) }
+
+    val composition by rememberLottieComposition(
+        LottieCompositionSpec.RawRes(R.raw.test)
+    )
+
+    Box(
+        modifier = modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        AnimatedVisibility(
+            visible = isPlaying,
+            enter = fadeIn(initialAlpha = 0.3f),
+            exit = fadeOut()
+        ) {
+            LottieAnimation(
+                composition = composition,
+                modifier = Modifier.fillMaxSize(),
+
+            )
+        }
+
+        Button(
+            onClick = { isPlaying = !isPlaying }
+        ) {
+            Text(text = if (isPlaying) "Pause" else "Play")
+        }
+    }
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+_______________________________
+
+
 # WorkManager
 
 Documentazione : https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started/define-work
