@@ -31,7 +31,10 @@ https://www.appicon.co/
 [Broadcasts & Broadcast Receivers](#Broadcasts)<br>
 [Track Location background](#TrackUserLocation)<br>
 [PollingVsStreaming](#PollingVsStreaming)<br>
-[StreamingC#](#StreamingC#)<br>
+[StreamingC#](#StreamingC#)<br><br>
+
+[Animation#](#Animation)<br>
+
 
 [WorkManager](#WorkManager)<br>
 [llm](#llm)<br>
